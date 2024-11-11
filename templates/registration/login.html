@@ -1,0 +1,11 @@
+{% block title %}
+    Login Page
+{% endblock title %}
+{% block content %}
+    <h1>Log in</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Log in"/>
+    </form>
+{% endblock content %}
