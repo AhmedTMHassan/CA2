@@ -3,6 +3,8 @@ from .models import Product, Make
 
 # Register your models here.
 
+class MakeAdmin(admin.ModelAdmin):
+    list_display = ['name', 'description', 'image']
 
 admin.site.register(Make)
 

@@ -11,7 +11,11 @@
                 <div class="col-md-2">
                     <select class="form-control">
                         <option>All Makes</option>
-                        
+                        <option>
+                            {% for make in make_list %}
+                                {{ make.name }}
+                            {% endfor %}
+                        </option>
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -54,10 +58,11 @@
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-primary btn-block" style="margin-top: 10%;">Search Cars</button>
+                    <a class="text-light" style="text-decoration: none;" href="{% url 'shop:make_list' %}"><button class="btn btn-primary btn-block" style="margin-top: 10%;" >Search Cars</button></a>
                 </div>
             </div>
         </div>
         
     </div>
 </nav>
+

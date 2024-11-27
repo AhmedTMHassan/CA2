@@ -9,7 +9,7 @@ class Make(models.Model):
         editable=True)
     name = models.CharField(max_length=250, unique=True)
     description = models.TextField(blank = True)
-    image = models.ImageField(upload_to = 'make', blank=True)
+    image = models.ImageField(upload_to='make', blank=True)
 
     def __str__(self):
         return self.name
