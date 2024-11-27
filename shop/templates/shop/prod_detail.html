@@ -5,13 +5,14 @@
 {% block content %}
 
     <div>
-        <h2>{{ product.make }}</h2>
+        <h2>{{ product.name }}</h2>
         {% if product.image %}
             <img class="carcover" style="width: 20%;" src="{{ product.image.url }}" alt="">
         {% endif %}
         <p>Mileage: {{ product.mileage }}</p>
         <p>Year Made: {{ product.year_made }}</p>
         <p>Price: {{ product.price }}</p>
+        <p>Description: {{ product.description }}</p>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

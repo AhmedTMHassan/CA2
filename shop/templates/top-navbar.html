@@ -10,6 +10,8 @@
                 {% if user.is_authenticated %}
                     <form method="post" action="{% url 'logout' %}" class="d-inline">
                         {% csrf_token %}
+                        <a href="{% url 'password_change' %}" class="btn btn-outline-light">Change Password</a>
+                        <a href="{% url 'password_reset' %}" class="btn btn-outline-light">Reset Password</a>
                         <button type="submit" class="btn btn-outline-light">Logout</button>
                     </form>
                 {% else %}

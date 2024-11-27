@@ -6,9 +6,8 @@ class Make(models.Model):
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
-        editable=True)
+        editable=False)
     name = models.CharField(max_length=250, unique=True)
-    description = models.TextField(blank = True)
     image = models.ImageField(upload_to='make', blank=True)
 
     def __str__(self):
@@ -22,7 +21,8 @@ class Product(models.Model):
         primary_key=True,
         default=uuid.uuid4,
         editable=False)
-    make = models.TextField(null=True, blank=True)
+    name = models.CharField(max_length=255)
+    make = models.ManyToManyField(Make)
     mileage = models.CharField(max_length=255)
     price = models.CharField(max_length=20)
     year_made = models.IntegerField(null=True, blank=True)
@@ -33,4 +33,4 @@ class Product(models.Model):
         return reverse('shop:prod_detail', args=[self.id])
 
     def __str__(self):
-        return self.make
+        return str(self.make)

@@ -1,16 +1,45 @@
-<div class="card-img-top rounded-top d-flex align-items-end">
-                                        {% if product.image %}
-                                            <img class="carcover" style="width: 25.9em;" src="{{ product.image.url }}" alt="">
-                                        {% endif %}
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                        <a href="{% url 'shop:prod_detail' product.pk %}" class="text-dark text-decoration-none">{{ product.make }}</a>
-                                    </h5>
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <p class="mb-0 text-primary fw-bold"></p>
-                                    </div>
-                                    <div class="d-flex">
-                                        <a href="#" class="btn btn-primary btn-sm me-2">Buy now</a>
-                                        <a href="{% url 'shop:prod_detail' product.pk %}" class="btn btn-outline-secondary btn-sm">Details</a>
-                                    </div>
+<div class="row justify-content-center mt-3">
+    <div class="col-md-2">
+        <select class="form-control">
+            <option>All Makes</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-control">
+            <option>Mileage</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-control">
+            <option>Min Year</option>
+            <option value="2000">2000</option>
+            <option value="2010">2010</option>
+            <option value="2020">2020</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-control">
+            <option>Max Year</option>
+            <option value="2000">2000</option>
+            <option value="2010">2010</option>
+            <option value="2020">2020</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-control" >
+            <option>Min Price</option>
+            <option value="1000">€1000</option>
+            <option value="5000">€5000</option>
+            <option value="10000">€10000</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <select class="form-control">
+            <option>Max Price</option>
+            <option value="1000">€5000</option>
+            <option value="5000">€10000</option>
+            <option value="10000">€20000</option>
+        </select>
+    </div>

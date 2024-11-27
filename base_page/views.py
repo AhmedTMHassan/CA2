@@ -1,10 +1,10 @@
-from django.views.generic.edit import CreateView
-from django.views.generic import TemplateView
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import TemplateView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.models import Group
 from django.urls import reverse_lazy
 from .forms import CustomUserCreationForm
-from .models import CustomUser
+from .models import CustomUser, Profile
 
 class SignUpView(CreateView):
     model = CustomUser
@@ -22,3 +22,11 @@ class SignUpView(CreateView):
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
+class ProfileEditView(UpdateView):
+    model = Profile
+    template_name = 'registration/edit_profile.html'
+    fields = ['username']
+
+class ProfilePageView(DetailView):
+    model = Profile
+    template_name = 'registration/user_profile.html'

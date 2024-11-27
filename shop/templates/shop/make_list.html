@@ -17,15 +17,15 @@
                                 <div class="card h-100 shadow-sm d-flex flex-column">
                                     <div class="card-body d-flex flex-column">
                                             {% if make.image %}
-                                            <a href="{% url 'shop:prod_list' %}">
-                                                <img src="{{ make.image.url }}" alt="" class="img-fluid rounded-top" style="height: 300px; width: 400px;">
-                                            </a>
-                                        {% endif %}
+                                                <a href="{% url 'shop:prod_list_by_make' make_name=make.name %}">
+                                                    <img src="{{ make.image.url }}" alt="" class="img-fluid rounded-top" style="height: 300px; width: 400px;">
+                                                </a>
+                                            {% endif %}
                                     </div>
                                     <div class="card-body d-flex flex-column">
                                         <h5 class="card-title">
                                             
-                                            <a href="{% url 'shop:prod_list' %}" class="text-dark text-decoration-none">
+                                            <a href="{% url 'shop:prod_list_by_make' make_name=make.name %}" class="text-dark text-decoration-none">
                                                 {{ make.name }}
                                             </a>
                                         </h5>
