@@ -1,5 +1,5 @@
 from django.views.generic.edit import CreateView, UpdateView
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import DetailView
 from django.contrib.auth import login
 from django.contrib.auth.models import Group
 from django.urls import reverse_lazy
@@ -18,9 +18,6 @@ class SignUpView(CreateView):
         login(self.request, self.object)
         return response
 
-
-class HomePageView(TemplateView):
-    template_name = 'home.html'
 
 class ProfileEditView(UpdateView):
     model = Profile
