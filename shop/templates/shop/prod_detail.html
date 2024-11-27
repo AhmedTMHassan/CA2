@@ -1,0 +1,12 @@
+{% include 'top-navbar.html' %}
+{% load static %}
+{% block title %}{{ product.make }}{% endblock title %}
+{% block content %}
+<div class="prod-detail">
+    <h2>{{ product.make }}</h2>
+    <p>Mileage: {{ product.mileage }}</p>
+    <p>Year Made: {{ product.year }}</p>
+    <p>Price: {{ product.price }}</p>
+</div>
+
+{% endblock content %}

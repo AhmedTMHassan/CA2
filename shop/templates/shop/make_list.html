@@ -1,0 +1,11 @@
+{% include 'top-navbar.html' %}
+{% load static %}
+{% block title %}Cars{% endblock title %}
+{% block content %}
+{% for make in make_list %}
+    <div>
+        <h2><a href="{{ make.get_absolute_url }}">{{ make.name }}</a></h2>
+        <p>{{ make.description }}</p>
+    </div>
+{% endfor %}
+{% endblock content %}
