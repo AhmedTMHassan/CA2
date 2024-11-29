@@ -60,7 +60,7 @@ ROOT_URLCONF = 'cars_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR.joinpath('templates'))],
+        'DIRS': [str(BASE_DIR.joinpath('base_page/templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
