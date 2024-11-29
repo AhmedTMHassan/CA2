@@ -1,3 +1,36 @@
+<style>
+    ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+  }
+  
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+</style>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="d-flex justify-content-between w-100 px-3">
@@ -29,18 +62,6 @@
                             <form method="post" action="{% url 'logout' %}" class="d-inline">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-outline-dark">Logout</button>
-                            </form>
-                        </li>
-                        {%else%}
-                        <li class="btn-outline-light"><a class="dropdown-item btn-outline-light" href="{% url 'password_change' %}">Change password</a></li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li>
-                            <form method="post" action="{% url 'logout' %}" style="display: inline">
-                                {% csrf_token %}
-                                <li class="btn-outline-light"><a href="#" onclick="event.preventDefault(); this.closest('form').submit();"
-                                    class="dropdown-item btn-outline-light" style="color: black; cursor: pointer">Logout</a></li>
                             </form>
                         </li>
                         {%endif%}

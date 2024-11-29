@@ -20,9 +20,9 @@ class Product(models.Model):
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
-        editable=False)
-    name = models.CharField(max_length=255)
+        editable=True)
     make = models.ManyToManyField(Make)
+    name = models.CharField(max_length=255)
     mileage = models.CharField(max_length=255)
     price = models.CharField(max_length=20)
     year_made = models.IntegerField(null=True, blank=True)
