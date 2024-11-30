@@ -24,8 +24,9 @@ class Product(models.Model):
     make = models.ManyToManyField(Make)
     name = models.CharField(max_length=255)
     mileage = models.CharField(max_length=255)
-    price = models.CharField(max_length=255)
-    year_made = models.IntegerField(null=True, blank=True)
+    price = models.PositiveIntegerField()
+    stock = models.IntegerField()
+    year_made = models.IntegerField()
     description = models.TextField()
     image = models.ImageField(upload_to='product_images', blank=True)
 

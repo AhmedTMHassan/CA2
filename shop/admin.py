@@ -10,7 +10,7 @@ admin.site.register(Make)
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['mileage', 'price', 'year_made', 'description', 'image']
+    list_display = ['mileage', 'price', 'stock', 'year_made', 'description', 'image']
 
 
 admin.site.register(Product, ProductAdmin)

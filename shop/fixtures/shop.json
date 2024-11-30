@@ -1,0 +1,50 @@
+[
+    {
+        "model": "shop.make",
+        "pk": "11bbd71c-f902-461d-b643-21946b3ded41",
+        "fields": {
+            "name": "Honda",
+            "image": "make/hondalogo.jpeg"
+        }
+    },
+    {
+        "model": "shop.make",
+        "pk": "142e1dbd-1da4-4c37-a8d3-d74b25d04bb9",
+        "fields": {
+            "name": "Toyota",
+            "image": "make/toyotalogo.png"
+        }
+    },
+    {
+        "model": "shop.make",
+        "pk": "79ca4b9d-2bc1-4518-80b7-4824810a45a5",
+        "fields": {
+            "name": "Audi",
+            "image": "make/audilogo_6hdgLIj.jpeg"
+        }
+    },
+    {
+        "model": "shop.make",
+        "pk": "d5a4a876-a5e7-4323-a2cc-058696d26e2f",
+        "fields": {
+            "name": "Nissan",
+            "image": "make/nissanlogo.jpeg"
+        }
+    },
+    {
+        "model": "shop.make",
+        "pk": "ed0c741e-c981-463a-8879-1ce251e78f25",
+        "fields": {
+            "name": "BMW",
+            "image": "make/bmwlogo_cra3DE5.jpg"
+        }
+    },
+    {
+        "model": "shop.make",
+        "pk": "eea37761-88d8-4a1e-a709-016d759d978a",
+        "fields": {
+            "name": "Mercedes",
+            "image": "make/merclogo.jpg"
+        }
+    }
+]
