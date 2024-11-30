@@ -1,7 +1,7 @@
 {% include 'top-navbar.html' %}
 {% load static %}
 {% block metadescription %}
-    This is the shopping cart page. Proceed to review your items and place the order.
+
 {% endblock %}
 {% block title %}
 
@@ -49,9 +49,9 @@
                     Your shopping cart is empty
                 </h1>
                 <br>
-                <p class="text-center">
-                    Please click <a href="{% url 'shop:prod_list' %}">here</a> to continue shopping.
-                </p>
+                <h4 class="text-center">
+                   To continue shopping please click <a class="btn btn-outline-dark" href="{% url 'shop:prod_list' %}">here</a>
+                </h4>
             </div>
         </div>
     {% else %}
@@ -94,7 +94,7 @@
                                 </td>
                                 {% if cart_item.quantity < cart_item.product.stock %}
                                     <td>
-                                        <a href="{% url 'cart:add_cart' car_item.product.id %}" class="custom_a"><i class="fas fa-plus-circle  
+                                        <a href="{% url 'cart:add_cart' cart_item.product.id %}" class="custom_a"><i class="fas fa-plus-circle  
                                            custom_icon"></i></a>&nbsp;
                                         <a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fas fa-minus-circle 
                                            custom_icon"></i></a>&nbsp;
@@ -104,7 +104,7 @@
                                     <td>
                                         &nbsp;<a href="{% url 'cart:cart_remove' cart_item.product.id %}" class="custom_a"><i class="fas fa-minus-circle 
                                         custom_icon"></i></a>&nbsp;
-                                        <a href="" class="custom_icon"><i class="fas fa-trash-alt custom_icon"></i></a>
+                                        <a href="{% url 'cart:full_remove' cart_item.product.id %}" class="custom_icon"><i class="fas fa-trash-alt custom_icon"></i></a>
                                     </td>
                                     <td></td>
                                 {% endif %}
