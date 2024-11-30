@@ -3,12 +3,15 @@ from django.views.generic import ListView, DetailView
 from .models import Product, Make
 
 
-
 class ProductListView(ListView):
     model = Product
     context_object_name = 'prod_list'
     template_name = 'shop/prod_list.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['make_list'] = Make.objects.all()  # Pass makes to the context
+        return context
 
     def get_queryset(self):
         queryset = Product.objects.all() 

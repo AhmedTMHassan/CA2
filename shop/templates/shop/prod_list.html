@@ -62,9 +62,9 @@
                     <a href="{% url 'home' %}">Home</a>
                 </li>
                 {% for make in make_list %}
-                <li class="breadcrumb-item">
-                    <a href="{% url 'shop:prod_list_by_make' make_name=make.name %}">{{make.name}}</a>
-                </li>
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'shop:prod_list_by_make' make_name=make.name %}">{{make.name}}</a>
+                    </li>
                 {% endfor %}
             </ol>
         </nav>
@@ -97,7 +97,7 @@
                                         </h5>
                                         <div class="mt-auto">
                                             <div class="d-flex">
-                                                <a href="{% url 'cart:add_cart' product.id %}" class="btn btn-primary btn-sm me-2">Buy now</a>
+                                                <a href="{% url 'cart:add_cart' product.id %}" class="btn btn-primary btn-sm me-2">Add To Cart</a>
                                                 <a href="{% url 'shop:prod_detail' product.pk %}" class="btn btn-outline-secondary btn-sm">Details</a>
                                             </div>
                                         </div>
