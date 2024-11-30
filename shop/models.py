@@ -25,6 +25,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     mileage = models.CharField(max_length=255)
     price = models.CharField(max_length=20)
+    stock = models.IntegerField(null=True, blank=True)
     year_made = models.IntegerField(null=True, blank=True)
     description = models.TextField()
     image = models.ImageField(upload_to='product_images', blank=True)

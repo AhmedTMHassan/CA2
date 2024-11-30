@@ -7,8 +7,9 @@
             {% endif %}
             <p class="lead">Ireland's best second hand car dealership</p>
             <p class="lead">Browse through thousands of cars to find your perfect match.</p>
-                <div class="col-md-2">
-                    <a class="text-light" style="text-decoration: none;" href="{% url 'shop:make_list' %}"><button class="btn btn-primary btn-block btn-lg" style="margin-top: 10%; width: 50em;" >Search All Makes</button></a>
+                <div class="col-md-2" style="display: flex; flex-direction: column;">
+                    <a class="text-light" style="text-decoration: none;" href="{% url 'shop:prod_list' %}"><button class="btn btn-primary btn-block btn-lg" style="margin-top: 10%; width: 50em;" >Search All Cars</button></a>
+                    <a class="text-light" style="text-decoration: none;" href="{% url 'shop:make_list' %}"><button class="btn btn-primary btn-block btn-lg" style="margin-top: 10%; width: 50em;" >Search All Brands</button></a>
                 </div>
         </div>
     </div>

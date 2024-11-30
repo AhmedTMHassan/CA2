@@ -3,10 +3,12 @@ from django.views.generic import ListView, DetailView
 from .models import Product, Make
 
 
+
 class ProductListView(ListView):
     model = Product
     context_object_name = 'prod_list'
     template_name = 'shop/prod_list.html'
+
 
     def get_queryset(self):
         queryset = Product.objects.all() 
