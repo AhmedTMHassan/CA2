@@ -91,14 +91,15 @@
 
 
 
-<div class="car-details">
+<div class="car-details" style="text-align: center;">
+    <span class="subheading" style="font-size: 3em;">{{ product.name }}</span>
+    <h2>€{{ product.price }}</h2>
+    </br>
     <div class="text text-center">
         {% if product.image %}
             <img class="carcover" style="width: 60%; border-radius: 1em; margin-top: 2%;" src="{{ product.image.url }}" alt="">
         {% endif %}
-        </br>
-        <span class="subheading" style="font-size: 3em;">{{ product.name }}</span>
-        <h2>€{{ product.price }}</h2>
+        
     </div>
     <div class="col-md d-flex align-items-stretch ftco-animate">
         <div class="card shadow-sm border-0 w-100">
@@ -110,7 +111,7 @@
               </div>
              
               <div>
-                <h5 class="mb-0" style="margin-right: 10em;">
+                <h5 class="mb-0" style="margin-right: 8em;">
                     <p class="mb-0 text-muted"> Mileage: </br>{{ product.mileage }}</p>
                 </h5>
               </div>

@@ -113,7 +113,7 @@ def empty_cart(request):
         cart_items = CartItem.objects.filter(cart=cart, active=True)
         cart_items.delete()  
         cart.delete()
-        return redirect('shop:all_products')
+        return redirect('shop:prod_list')
     except Cart.DoesNotExist:
         pass
     return redirect('cart:cart_detail')
@@ -128,7 +128,7 @@ def create_order(request):
         try:
             session = stripe.checkout.Session.retrieve(session_id)
         except StripeError as e:
-            return redirect("shop:all_products") 
+            return redirect("shop:prod_list") 
 
         customer_details = session.customer_details
         if not customer_details or not customer_details.address:
@@ -185,7 +185,7 @@ def create_order(request):
                 empty_cart(request)
             except Exception as e:
                 return redirect("shop:prod_list")  
-        return redirect('shop:prod_list')
+        return redirect('order:thanks',order_details.id)
 
     except ValueError as ve:
         print(f"Error: {ve}")
