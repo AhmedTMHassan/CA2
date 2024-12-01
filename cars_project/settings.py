@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cart',
     'crispy_forms',
     'crispy_bootstrap5',
+    'order',
     
 ]
 
@@ -148,5 +149,5 @@ AUTH_USER_MODEL = 'base_page.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-STRIPE_SECRET_KEY = ''
-STRIPE_PUBLISHABLE_KEY = ''
+STRIPE_SECRET_KEY = 'sk_test_51QR08TASyMe7vuko6w1e315oj3EHMSDQ0LsxRz80B1DmMs3CrokX6f6QppbcRMq2dF2yOyBb5Dy0aazZzRswzoyh00FazeWoZO'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51QR08TASyMe7vuko8IzIMMltIKs2hzoQfHn1VlDo88lGxD4ecYV1rPIDI0UZRMUSLoQ4loSHI200u7LKRUYA2XUS00tLogsWBe'
