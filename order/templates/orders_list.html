@@ -13,12 +13,7 @@
         <li class="breadcrumb-item">
             <a href="{% url 'home' %}">Home</a>
         </li>
-        <li class="breadcrumb-item">
-            <a href="{% url 'shop:make_list' %}">All Brands</a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="{% url 'shop:prod_list' %}">All Cars</a>
-        </li>
+      
     </ol>
 </nav>
 
@@ -48,7 +43,7 @@
                     <td>{{ order.total }}</td>
                     <td><i class="fas fa-check"></i>&nbsp;Complete</td>
                     <td><a href="{% url 'order:order_detail' order.id %}">View order</a></td>
-                    2
+                    
                 </tr>
                 {% endfor %}
             </tbody>

@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import ProductListView, ProductDetailView, MakeListView
+from .views import ProductListView, ProductDetailView, MakeListView, ContactUsView, AboutUsView
+from . import views
+
 
 app_name = 'shop'
 
@@ -8,4 +10,6 @@ urlpatterns = [
     path('product/<uuid:pk>/',ProductDetailView.as_view(), name='prod_detail'),
     path('make/', MakeListView.as_view(), name='make_list'),  # List of all makes
     path('make/<str:make_name>/', ProductListView.as_view(), name='prod_list_by_make'), 
+    path('contact/', ContactUsView.as_view(), name='contactus'),
+    path('about/', AboutUsView.as_view(), name='about'),
 ]

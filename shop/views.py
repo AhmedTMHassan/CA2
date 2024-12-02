@@ -1,6 +1,7 @@
-from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.shortcuts import get_object_or_404, render
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Product, Make
+
 
 
 class ProductListView(ListView):
@@ -72,3 +73,9 @@ class MakeListView(ListView):
 
         return queryset
 
+
+class ContactUsView(TemplateView):
+    template_name = 'contactus.html'
+
+class AboutUsView(TemplateView):
+    template_name = 'about.html'

@@ -111,3 +111,17 @@
     .my_custom_button {
         margin-top: 5px;
     }
+
+    footer{
+        border-top: 2px solid white;
+        
+    }
+    nav.navbar{
+        border-bottom: 2px solid white;
+    }
+
+    div.nav-bar{        
+        border-right: 2px solid white;
+    }
+    
+    

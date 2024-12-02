@@ -1,18 +1,40 @@
-
-<nav style="background: url(static/images/background2.jpg); background-size: cover; background-position: center; color: white; min-height: 639px;">
-    <div class="container-fluid d-flex flex-column align-items-center justify-content-center">
-
-        <div class="text-center mt-4">
+<nav style="background: url(static/images/background3.avif); background-size: cover; background-position: center; color: white; min-height: 639px;">
+    <div class="d-flex">
+        <div class="nav-bar bg-dark text-white p-3" style="width: 170px; height: 100vh;">
+            <button class="btn btn-outline-light w-100 mb-3" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+                aria-expanded="true">
+                Filters
+            </button>
+            <div id="sidebarMenu" class="collapse show">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'shop:about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'shop:contactus' %}">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-4" style="margin-left: 16em; flex-wrap: wrap;">
             {% if user.is_authenticated %}
-                <h1 class="text-dark" style="font-size: 2.5rem; font-weight: bold;">Welcome {{ user.username }}!</h1>
+            <h1 class="text-light" style="font-size: 2.5rem; font-weight: bold;">Welcome {{ user.username }}!</h1>
             {% endif %}
-            <p class="lead text-dark" style="font-size: x-large; font-weight: bold;">Ireland's best second hand car dealership</p>
-            <p class="lead text-dark" style="font-size: x-large; font-weight: bold;">Browse through thousands of cars to find your perfect match.</p>
-                <div class="col-md-2" style="display: flex; flex-direction: column;">
-                    <a class="text-light" style="text-decoration: none;" href="{% url 'shop:prod_list' %}"><button class="btn btn-primary btn-block btn-lg" style="margin-top: 10%; width: 35em;" >Search All Cars</button></a>
-                    <a class="text-light" style="text-decoration: none;" href="{% url 'shop:make_list' %}"><button class="btn btn-primary btn-block btn-lg" style="margin-top: 10%; width: 35em;" >Search All Brands</button></a>
-                </div>
+            <p class="lead text-light" style="font-size: x-large; font-weight: bold;">Ireland's best second hand car
+                dealership</p>
+            <p class="lead text-light" style="font-size: x-large; font-weight: bold;">Browse through thousands of
+                cars to find your perfect match.</p>
+            <div class="col-md-2" style="display: flex; flex-direction: column; margin-top: 5em;">
+                <a class="text-light" style="text-decoration: none;" href="{% url 'shop:prod_list' %}"><button
+                        class="btn btn-outline-light btn-block btn-lg" style="margin-top: 10%; width: 35em;">Search All
+                        Cars</button></a>
+                <a class="text-light" style="text-decoration: none;" href="{% url 'shop:make_list' %}"><button
+                        class="btn btn-outline-light btn-block btn-lg" style="margin-top: 10%; width: 35em;">Search All
+                        Brands</button></a>
+            </div>
         </div>
     </div>
 </nav>
-
