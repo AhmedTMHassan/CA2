@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import Product, Make
+from .models import Product, Make, CarListing
 
 # Register your models here.
+class CarListingAdmin(admin.ModelAdmin):
+    list_display = ['name', 'image']
+
+admin.site.register(CarListing, CarListingAdmin)
 
 class MakeAdmin(admin.ModelAdmin):
     list_display = ['name', 'image']

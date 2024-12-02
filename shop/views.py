@@ -1,7 +1,33 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import ListView, DetailView, TemplateView
-from .models import Product, Make
+from .models import Product, Make, CarListing
+from .forms import CarListingForm
+from django.contrib.auth.decorators import login_required
 
+@login_required 
+def create_car_listing(request):
+    if request.method == "POST":
+        form = CarListingForm(request.POST, request.FILES)
+        if form.is_valid():
+            car_listing = form.save(commit=False)
+            car_listing.user = request.user 
+            car_listing.save()
+
+            return redirect('shop:customer_list') 
+    else:
+        form = CarListingForm()
+
+    return render(request, 'shop/create_car_listing.html', {'form': form})
+
+
+class CarListView(ListView):
+    model = CarListing 
+    context_object_name = 'car_list' 
+    template_name = 'shop/customer_car_listing.html'
+
+    def get_queryset(self):
+        queryset = CarListing.objects.filter(user=self.request.user).distinct()
+        return queryset
 
 
 class ProductListView(ListView):
@@ -26,6 +52,8 @@ class ProductListView(ListView):
             queryset = queryset.filter(make=make) 
 
         return queryset
+    
+
 
 class ProductDetailView(DetailView):
     model = Product
@@ -79,3 +107,8 @@ class ContactUsView(TemplateView):
 
 class AboutUsView(TemplateView):
     template_name = 'about.html'
+
+
+
+
+

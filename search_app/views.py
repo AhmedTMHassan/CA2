@@ -9,7 +9,7 @@ class SearchResultsListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return Product.objects.filter(Q(make__name__icontains=query))
+        return Product.objects.filter(Q(make__name__icontains=query) | Q(colour__icontains=query) | Q(year_made__icontains=query))
 
     def get_context_data(self, **kwargs):
         context = super(SearchResultsListView, self).get_context_data(**kwargs)

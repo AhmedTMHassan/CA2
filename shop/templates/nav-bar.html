@@ -1,22 +1,40 @@
-<nav style="background: url(static/images/background3.avif); background-size: cover; background-position: center; color: white; min-height: 639px;">
+<nav
+    style="background: url(static/images/background3.avif); background-size: cover; background-position: center; color: white; min-height: 639px;">
     <div class="d-flex">
         <div class="nav-bar bg-dark text-white p-3" style="width: 170px; height: 100vh;">
-            <button class="btn btn-outline-light w-100 mb-3" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
-                aria-expanded="true">
-                Filters
-            </button>
-            <div id="sidebarMenu" class="collapse show">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'shop:about' %}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="{% url 'shop:contactus' %}">Contact Us</a>
-                    </li>
-                </ul>
+            <div>
+                <button class="btn btn-outline-light w-100 mb-3" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+                    aria-expanded="true">
+                    Services
+                </button>
+                <div id="sidebarMenu" class="collapse show">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'shop:create_car_listing' %}">Create Ads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'shop:customer_list' %}">Your Ads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'shop:about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'shop:contactus' %}">Contact Us</a>
+                        </li>
+                        <li>
+                           
+
+
+<ul>
+    {% for listing in car_listings %}
+        <li>{{ listing.name }} - {{ listing.price }} </li>
+        <img src="{{ listing.image.url }}" alt="">
+        <p>Listing ID: {{ listing.id }}</p>
+    {% endfor %}
+</ul>
+</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="text-center mt-4" style="margin-left: 16em; flex-wrap: wrap;">
@@ -38,3 +56,6 @@
         </div>
     </div>
 </nav>
+
+
+
