@@ -2,61 +2,13 @@
 {% load static %}
 {% block title %}{% endblock title %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}?v={{ STATIC_VERSION }}">
-<link rel="stylesheet" href="static/css/style.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 {% block content %}
 
-<style>
-    .breadcrumb {
-        background-color: transparent; /* Transparent background */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove any margins */
-        display: flex; /* Align items in a single row */
-        align-items: center; /* Vertically center items */
-        flex-wrap: nowrap; /* Prevent wrapping */
-    }
-    
-    .breadcrumb-item {
-        display: flex; /* Ensure items are inline */
-        align-items: center; /* Vertically align icons/text */
-    }
-    
-    .breadcrumb-item a {
-        color: #000; /* Dark text color */
-        text-decoration: none; /* No underline */
-        padding: 0.5rem 1rem; /* Padding for button-like appearance */
-        border: 1px solid #333; /* Dark border for outlined effect */
-        border-radius: 5px; /* Rounded corners */
-        background-color: transparent; /* Transparent background */
-        transition: background-color 0.3s ease, color 0.3s ease;
-        margin: 0 5px; /* Space between buttons */
-    }
-    
-    .breadcrumb-item a:hover {
-        background-color: #000; /* Black background on hover */
-        color: #fff; /* White text on hover */
-    }
-    
-    .breadcrumb-item + .breadcrumb-item::before {
-        content: ">>"; /* Separator between items */
-        color: #333; /* Dark separator */
-        margin: 0 5px; /* Proper spacing */
-        font-size: 1rem; /* Adjust font size for balance */
-    }
-    
-    @media (max-width: 768px) {
-        .breadcrumb-item a {
-            padding: 0.25rem 0.5rem; /* Adjust padding for smaller screens */
-            font-size: 0.9rem; /* Reduce font size */
-        }
-    
-        .breadcrumb-item + .breadcrumb-item::before {
-            margin: 0 3px; /* Adjust separator spacing */
-        }
-    }
-</style>
+
+
 
 
 <nav aria-label="breadcrumb" style="margin-top: 1%; margin-bottom: 1%;">
@@ -72,7 +24,6 @@
         </li>
     </ol>
 </nav>
-
     
 
             <div class="d-flex justify-content-center">

@@ -10,7 +10,7 @@ class ProductListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['make_list'] = Make.objects.all()  # Pass makes to the context
+        context['make_list'] = Make.objects.all()  
         return context
 
     def get_queryset(self):
@@ -18,9 +18,8 @@ class ProductListView(ListView):
         make_name = self.kwargs.get('make_name')  
         
         if not make_name:
-            make_name = self.request.GET.get('make')  # Get make from query parameter (from the form)
+            make_name = self.request.GET.get('make') 
         
-        # If make_name is provided and not "All Makes", filter products by make
         if make_name and make_name != "All Makes":
             make = get_object_or_404(Make, name=make_name)
             queryset = queryset.filter(make=make) 
@@ -33,7 +32,7 @@ class ProductDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['make_list'] = Make.objects.all()  # Pass makes to the context
+        context['make_list'] = Make.objects.all() 
         return context
 
     def get_queryset(self):
@@ -41,9 +40,8 @@ class ProductDetailView(DetailView):
         make_name = self.kwargs.get('make_name')  
         
         if not make_name:
-            make_name = self.request.GET.get('make')  # Get make from query parameter (from the form)
+            make_name = self.request.GET.get('make')
         
-        # If make_name is provided and not "All Makes", filter products by make
         if make_name and make_name != "All Makes":
             make = get_object_or_404(Make, name=make_name)
             queryset = queryset.filter(make=make) 
@@ -58,7 +56,7 @@ class MakeListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['make_list'] = Make.objects.all()  # Pass makes to the context
+        context['make_list'] = Make.objects.all() 
         return context
 
     def get_queryset(self):
@@ -66,9 +64,8 @@ class MakeListView(ListView):
         make_name = self.kwargs.get('make_name')  
         
         if not make_name:
-            make_name = self.request.GET.get('make')  # Get make from query parameter (from the form)
+            make_name = self.request.GET.get('make')  
         
-        # If make_name is provided and not "All Makes", filter products by make
         if make_name and make_name != "All Makes":
             make = get_object_or_404(Make, name=make_name)
             queryset = queryset.filter(make=make) 

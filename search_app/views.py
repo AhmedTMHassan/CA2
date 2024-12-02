@@ -15,3 +15,4 @@ class SearchResultsListView(ListView):
         context = super(SearchResultsListView, self).get_context_data(**kwargs)
         context['query'] = self.request.GET.get('q')
         return context
+        

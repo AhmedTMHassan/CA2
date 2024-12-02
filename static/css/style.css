@@ -1,0 +1,113 @@
+.breadcrumb {
+    background-color: transparent; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.breadcrumb-item {
+    display: flex; 
+    align-items: center; 
+}
+
+.breadcrumb-item a {
+    color: #000;
+    text-decoration: none;
+    padding: 0.5rem 1rem; 
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: transparent; 
+    transition: 0.3s ease, color 0.3s ease;
+    margin: 0 5px;
+}
+
+.breadcrumb-item a:hover {
+    background-color: #000;
+    color: #fff; 
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">>"; 
+    color: #333;
+    margin: 0 5px; 
+    font-size: 1rem; 
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-item a {
+        padding: 0.25rem 0.5rem; 
+        font-size: 0.9rem;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        margin: 0 3px;
+    }
+}
+
+.nav-pills .nav-link {
+    background-color: transparent; 
+    color: blue; 
+    border: none; 
+}
+
+
+.nav-pills .nav-link:hover {
+    background-color: blue; 
+    color: white;
+}
+
+
+.nav-pills .nav-link.active {
+    background-color: blue; 
+    color: white;
+}
+
+
+.collapse.show + .nav-pills .nav-link {
+    background-color: blue;
+    color: white; 
+}
+
+
+.collapse.show {
+    display: block; 
+}
+
+.my_custom_button {
+    background-color: #6772e5 !Important; 
+    color: white;
+    font-size: 16px; 
+    border: none; 
+    border-radius: 5px; 
+    text-align: center; 
+    text-decoration: none; 
+    width: 100%; 
+    margin-bottom: 10px;
+}
+
+.my_custom_table {
+	min-width: 400px;
+	font-size: 14px;
+    }
+    .my_custom_thead {
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        background-color: #f8f9fa!important;
+    }
+    .custom_image {
+        width: 100px;
+        height: 100px;
+    }
+    .custom_a {
+        text-decoration: none;
+    }
+    .custom_icon {
+        text-decoration: none;
+        color: #868e96 !important;
+    }
+    .my_custom_button {
+        margin-top: 5px;
+    }
