@@ -2,7 +2,10 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Product, Make, CarListing
 from .forms import CarListingForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
+
+
+
 
 @login_required 
 def create_car_listing(request):
@@ -107,6 +110,8 @@ class ContactUsView(TemplateView):
 
 class AboutUsView(TemplateView):
     template_name = 'about.html'
+
+
 
 
 

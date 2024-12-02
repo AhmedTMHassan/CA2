@@ -6,6 +6,7 @@ from django.conf import settings
 
 
 
+
 class Make(models.Model):
     id = models.UUIDField(
         primary_key=True,
@@ -59,5 +60,11 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.make)
+
+
+
+
+
+
 
 

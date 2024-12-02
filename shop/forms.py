@@ -1,5 +1,5 @@
 from django import forms
-from .models import CarListing
+from .models import CarListing, Make
 
 class CarListingForm(forms.ModelForm):
     class Meta:
@@ -9,8 +9,6 @@ class CarListingForm(forms.ModelForm):
 
 
 
-from django import forms
-from .models import CarListing, Make
 
 class CarFilterForm(forms.Form):
     make = forms.ModelChoiceField(queryset=Make.objects.all(), required=False)
